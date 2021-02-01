@@ -25,7 +25,7 @@ SECRET_KEY = 'm1+0-1+tt#4maa**j@%ir@zql^9qi$brwi1!@0uzmf4-xlx(01'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = false
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','cliping2d.herokuapp.com/']
 
 
 # Application definition
