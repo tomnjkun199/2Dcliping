@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<article class="message is-warning">
+  <div class="message-header">
+    <p>Cooridate</p>
+  </div>
+  <div class="message-body">
+    <canvas id="myCanvas" width={{view}} height={{view}}
+        style="border:1px solid #d3d3d3;">
+            Your browser does not support the canvas element.
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+    </script>
+        {% for x1,y1,x2,y2 in p %}
+        <script>
+        var ctx = canvas.getContext("2d");
+            ctx.moveTo({{x1}}*{{areaX}},{{view}}-({{y1}}*{{areaY}}));
+            ctx.lineTo({{x2}}*{{areaX}},{{view}}-({{y2}}*{{areaY}}));
+            ctx.stroke();
+        </script> 
+        {% endfor %} 
+        {% for xmin,xmax,ymin,ymax in scalepoint %}
+            <p>xmin = {{xmin}}</p>
+            <p>xmax = {{xmax}}</p>
+            <p>ymin = {{ymin}}</p>
+            <p>ymax = {{ymax}}</p>
+        {% endfor %} 
+</div>
+</article>
+    
+</body>
+</html>

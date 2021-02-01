@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article class="message is-primary">
+  <div class="message-header">
+    <p>Line List</p>
+  </div>
+  <div class="message-body">
+
+        <div class="columns">
+          <div class="column">
+            <p>{{line}}</p>
+            <p>{{cliping}}</p>
+            <p>{{point}}</p>
+          </div>
+        </div> 
+        {% for x1,y1,x2,y2 in totalPoint %}
+            <p>point A: ({{x1}},{{y1})}</p>
+            <p>point B: ({{x2}},{{y2})}</p>
+        {% endfor %}  
+    
+  </div>
+</article>
+    
+</body>
+</html>

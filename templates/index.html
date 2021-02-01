@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content" style="text-align: center; margin-top:50px; margin-bottom: 50px;">
+            <h1>2D Cliping</h1>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <article class="message">
+                    <div class="message-header">
+                      <p>Window</p>
+                    </div>
+                    <form action="calculate" method="get">
+                    <div class="message-body">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label>Xmin :</label>
+                                    <input class="input" type="text" placeholder="Text input" id="Xmin" name="Xmin" value=0>
+                                </td>
+                                <td>
+                                    <label>Xmax :</label>
+                                    <input class="input" type="text" placeholder="Text input" id="Xmax" name="Xmax" value=10>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Ymin :</label>
+                                    <input class="input" type="text" placeholder="Text input" id="Ymin" name="Ymin" value=0>
+                                </td>
+                                <td>
+                                    <label>Ymax :</label>
+                                    <input class="input" type="text" placeholder="Text input" id="Ymax" name="Ymax" value=10>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>X1 :</label>
+                                    <input class="input" type="text" placeholder="Text input" id="Xmin" name="x1">
+                                </td>
+                                <td>
+                                    <label>Y1 :</label>
+                                    <input class="input" type="text" placeholder="Text input" id="Xmax" name="y1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>X2 :</label>
+                                    <input class="input" type="text" placeholder="Text input" id="Xmin" name="x2">
+                                </td>
+                                <td>
+                                    <label>Y2 :</label>
+                                    <input class="input" type="text" placeholder="Text input" id="Xmax" name="y2">
+                                </td>
+                            </tr>
+                        </table>       
+                        <input type="submit" class="button is-danger is-outlined is-fullwidth" id="btn1" value="Edit">
+                    </div>
+                    </form>
+                  </article>
+            </div>
+            <div class="column">
+                {% include 'list.html'%}
+                {% include 'edit.html'%}
+            </div>
+        </div>
+      </div>
+
+      <style>
+          #Xmin,#Xmax,#Ymin,#Ymax{
+              margin-bottom: 10px;
+          } 
+          #btn1{
+              margin-top:10px;
+          }
+      </style>
+</body>
+</html>
