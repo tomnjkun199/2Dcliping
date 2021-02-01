@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'm1+0-1+tt#4maa**j@%ir@zql^9qi$brwi1!@0uzmf4-xlx(01'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = false
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','cliping2d.herokuapp.com/']
 
