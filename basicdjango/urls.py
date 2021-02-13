@@ -16,12 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from cliping import views
+from polygon import polyviews
+from Bresenham import Breviews
 
 from django.views.static import serve
 from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.hello),
-    path('calculate',views.cal)
+    path('',views.start),
+    path('line/',views.hello,name="line"),
+    path('polygon/',polyviews.hello,name="poly"),
+    path('Bresenham/',Breviews.hello,name="bre"),
+    path('line/calculate',views.cal),
+    path('polygon/add',polyviews.addlist),
+    path('Bresenham/calculate',Breviews.brealgo)
 ]

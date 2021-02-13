@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'navbar.html'%}
+    <div class="container">
+        <div class="content" style="margin-top: 20px;">
+        <h1 style="text-align: center; margin-bottom: 50px;">Bresenham Algorithm</h1>
+        <div class="columns">
+            <div class="column">
+                <article class="message is-info">
+                    <div class="message-header">
+                      <p>Line Segment</p>
+                    </div>
+                        <div class="message-body">
+                            <form  action="calculate" method="get">
+                                <label>X1 :</label>
+                                <input class="input" type="number" placeholder="Text input" id="X1" name="x1" required>
+                                <label>Y1 :</label>
+                                <input class="input" type="number" placeholder="Text input" id="Y1" name="y1" required>
+                                <label>X2 :</label>
+                                <input class="input" type="number" placeholder="Text input" id="X2" name="x2" required>
+                                <label>Y2 :</label>
+                                <input class="input" type="number" placeholder="Text input" id="Y2" name="y2" required>
+                                <input type="submit" class="button is-button is-success is-fullwidth" id="btn1" value="calculate">
+                            </form>
+                        </div>
+                </article>
+            </div>
+            <div class="column">
+                {% include 'show.html'%} 
+            </div>
+        </div>
+        </div>
+    </div>
+    <style>
+        #Xmin,#Xmax,#Ymin,#Ymax{
+            margin-bottom: 10px;
+        }
+        #btn1{
+            margin-top:10px;
+        }
+    </style>
+    
+</body>
+</html>

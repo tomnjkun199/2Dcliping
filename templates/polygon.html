@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'navbar.html'%} 
+    <div class="container">
+        <div class="content" style="margin-top: 20px;">
+            <h1 style="text-align: center; margin-bottom: 50px;">Polygon Cliping</h1>
+            <div class="columns">
+                <div class="column">
+                    <article class="message is-info">
+                        <div class="message-header">
+                          <p>Line Segment</p>
+                        </div>
+                        <div class="message-body">
+                          <form name="polyForm" action="add" method="get" onsubmit="return validateForm()">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label>Xmin :</label>
+                                        <input class="input" type="number" placeholder="Text input" id="Xmin" name="xmin" required>
+                                    </td>
+                                    <td>
+                                        <label>Xmax :</label>
+                                        <input class="input" type="number" placeholder="Text input" id="Xmax" name="xmax" required>
+                                    </td>
+                                    <td>
+                                        <label>Ymin :</label>
+                                        <input class="input" type="number" placeholder="Text input" id="Ymin" name="ymin" required>
+                                    </td>
+                                    <td>
+                                        <label>Ymax :</label>
+                                        <input class="input" type="number" placeholder="Text input" id="Ymax" name="ymax" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>point1 :</label>
+                                        <input class="input" type="number" placeholder="x1" id="X1" name="x1" required>
+                                        <input class="input" type="number" placeholder="y1" id="y1" name="y1" required>
+                                    </td>
+                                    <td>
+                                        <label>point2 :</label>
+                                        <input class="input" type="number" placeholder="x2" id="x2" name="x2" required>
+                                        <input class="input" type="number" placeholder="y2" id="y2" name="y2" required>
+                                    </td>
+                                    <td>
+                                        <label>point3 :</label>
+                                        <input class="input" type="number" placeholder="x3" id="X3" name="x3" required>
+                                        <input class="input" type="number" placeholder="y3" id="y3" name="y3" required>
+                                    </td>
+                                    <td>
+                                        <label>point4 :</label>
+                                        <input class="input" type="number" placeholder="x4" id="X4" name="x4" required>
+                                        <input class="input" type="number" placeholder="y4" id="y4" name="y4" required>
+                                    </td>
+                                    <td>
+                                        <label>point5 :</label>
+                                        <input class="input" type="number" placeholder="x5" id="X5" name="x5" required>
+                                        <input class="input" type="number" placeholder="y5" id="y5" name="y5" required>
+                                    </td>
+                                </tr>
+                            </table>
+                            <input type="submit" class="button is-button is-success is-fullwidth" id="btn1" value="Add">
+                          </form>
+                        </div>
+                    </article>
+                </div>
+                <div class="column">
+                    {% include 'show.html'%} 
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <style>
+        #Xmin,#Xmax,#Ymin,#Ymax{
+            margin-bottom: 10px;
+        }
+        #btn1{
+            margin-top:10px;
+        }
+    </style>
+    
+    <script>
+        function validateForm() {
+            console.log("im here")
+            var i=0;
+            var f1 = document.forms["polyForm"]["x1"].value;
+            var f2 = document.forms["polyForm"]["y1"].value;
+            var f3 = document.forms["polyForm"]["x2"].value;
+            var f4 = document.forms["polyForm"]["y2"].value;
+            if(f1==f3 && f2==f4){
+                alert("พิกัด x1,y1 ไม่ควรเท่ากับ x2,y2!!!");
+                return false;
+            }
+            
+        }
+  </script>
+</body>
+</html>

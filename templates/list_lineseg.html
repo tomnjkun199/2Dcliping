@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article class="message is-primary">
+  <div class="message-header">
+    <p>Line List</p>
+  </div>
+  <div class="message-body">
+
+        
+        {% for x1,y1,x2,y2 in point %}
+            <div class="columns">
+                <div class="column">
+                    {{x1}} {{y1}} {{x2}} {{y2}}
+                </div>
+            </div> 
+        {% endfor %}  
+    
+  </div>
+</article>
+    
+</body>
+</html>

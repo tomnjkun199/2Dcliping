@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</head>
+<body>
+    {% include 'navbar.html'%}
+    <div class="container">
+        <div class="content" style="text-align: center; margin-top:50px; margin-bottom: 50px;">
+            <h1>Line Cliping</h1>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <article class="message">
+                    <div class="message-header">
+                      <p>Window</p>
+                    </div>
+                    <form name="myForm" action="calculate" method="get" onsubmit="return validateForm()">
+                    <div class="message-body">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label>Xmin :</label>
+                                    <input class="input" type="number" placeholder="Text input" id="Xmin" name="Xmin" required>
+                                </td>
+                                <td>
+                                    <label>Xmax :</label>
+                                    <input class="input" type="number" placeholder="Text input" id="Xmax" name="Xmax" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Ymin :</label>
+                                    <input class="input" type="number" placeholder="Text input" id="Ymin" name="Ymin" required>
+                                </td>
+                                <td>
+                                    <label>Ymax :</label>
+                                    <input class="input" type="number" placeholder="Text input" id="Ymax" name="Ymax" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>X1 :</label>
+                                    <input class="input" type="number" placeholder="Text input" id="X1" name="x1" required>
+                                </td>
+                                <td>
+                                    <label>Y1 :</label>
+                                    <input class="input" type="number" placeholder="Text input" id="Y1" name="y1" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>X2 :</label>
+                                    <input class="input" type="number" placeholder="Text input" id="X2" name="x2" required>
+                                </td>
+                                <td>
+                                    <label>Y2 :</label>
+                                    <input class="input" type="number" placeholder="Text input" id="Y2" name="y2" required>
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="submit" class="button is-danger is-outlined is-fullwidth" id="btn1" value="Edit">
+                    </div>
+                    </form>
+                  </article>
+            </div>
+            <div class="column">
+                {% include 'list.html'%}
+                {% include 'edit.html'%}
+            </div>
+        </div>
+      </div>
+      <script>
+            function validateForm() {
+                console.log("im here")
+                var f1 = document.forms["myForm"]["Xmin"].value;
+                var f2 = document.forms["myForm"]["Ymin"].value;
+                var f3 = document.forms["myForm"]["Xmax"].value;
+                var f4 = document.forms["myForm"]["Ymax"].value;
+                var f5 = document.forms["myForm"]["x1"].value;
+                var f6 = document.forms["myForm"]["y1"].value;
+                var f7 = document.forms["myForm"]["x2"].value;
+                var f8 = document.forms["myForm"]["y2"].value;
+                if((f1==f3) || (f2==f4)){
+                    alert("ค่า min กับ max ไม่ควรเท่ากัน");
+                    return false;
+                }
+                else if(f5==f7 && f6==f8){
+                    alert("พิกัด x1,y1 ไม่ควรเท่ากับ x2,y2!!!");
+                    return false;
+                    }
+            }
+      </script>
+
+      <style>
+          #Xmin,#Xmax,#Ymin,#Ymax{
+              margin-bottom: 10px;
+          }
+          #btn1{
+              margin-top:10px;
+          }
+      </style>
+</body>
+</html>
